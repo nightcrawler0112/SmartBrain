@@ -9,10 +9,13 @@ class App extends React.Component{
   render(){
     return (
       <div className="App">
+      
       <Navigation/>
-      <Logo/>
       <Rank/>
       <ImageLinkForm/>
+      <Logo/>
+      
+      
       
        {/* 
       <FaceRecogniton/> */}
