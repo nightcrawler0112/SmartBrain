@@ -1,5 +1,8 @@
 import React from 'react';
 import Navigation from './components/Navigation/Navigation.js'; 
+import ImageLinkForm from './components/ImageLinkform/ImageLinkForm.js'; 
+import Logo from './components/Logo/Logo.js'; 
+import Rank from './components/Rank/rank.js'; 
 import './App.css';
 
 class App extends React.Component{
@@ -7,8 +10,11 @@ class App extends React.Component{
     return (
       <div className="App">
       <Navigation/>
-      {/* <Logo/>
+      <Logo/>
+      <Rank/>
       <ImageLinkForm/>
+      
+       {/* 
       <FaceRecogniton/> */}
       </div>
     );
