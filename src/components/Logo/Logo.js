@@ -7,7 +7,7 @@ const Logo=() => {
    
     return(
         
-        <div className='ma4 br3 pa2 mt0'>
+        <div className='ma4 br3 pa4 mt0'>
             <Tilt className="Tilt br2 shadow-2">
             <div>
                 <img alt='1' src={brain}/>

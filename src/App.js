@@ -2,6 +2,7 @@ import React from 'react';
 import Navigation from './components/Navigation/Navigation.js'; 
 import ImageLinkForm from './components/ImageLinkform/ImageLinkForm.js';
 import Signin from './components/SignIn/Signin.js';
+import Register from './components/Register/Register.js';
 import FaceRecogniton from './components/Facerecognition/FaceRecognition.js';  
 import Logo from './components/Logo/Logo.js'; 
 import Rank from './components/Rank/rank.js'; 
@@ -123,22 +124,32 @@ class App extends React.Component{
     return (
       <div className="App">
       
-      <ParticlesBg type="cobweb" bg={true} />
+      <ParticlesBg  num={50} type="cobweb" bg={true} />
       
       { 
         
-        this.state.route === 'signin' ? 
+        this.state.route === 'home' ? 
         <div>
-        <Logo/>
-        <Signin onRouteChange={this.onRouteChange}/> </div>:
-        <div>
-          <Navigation onRouteChange={this.onRouteChange}/>
-          
-          
-          <Rank/>
-          <ImageLinkForm onInputChange={this.onInputChange} onButtonDetect={this.onButtonDetect}/>
-          <FaceRecogniton box={this.state.box} imageUrl={this.state.imageUrl}/>
-       </div>
+        <Navigation onRouteChange={this.onRouteChange}/>
+        
+        
+        <Rank/>
+        <ImageLinkForm onInputChange={this.onInputChange} onButtonDetect={this.onButtonDetect}/>
+        <FaceRecogniton box={this.state.box} imageUrl={this.state.imageUrl}/>
+     </div> :(
+      this.state.route==='signin' ?
+      <div>
+      <Logo/>
+      <Signin onRouteChange={this.onRouteChange}/> </div> :
+       <div>
+       <Logo/>
+      <Register onRouteChange={this.onRouteChange}/>
+      </div>
+
+     )
+
+       
+        
       }
       </div>
      
