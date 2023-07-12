@@ -128,8 +128,24 @@ class App extends React.Component{
       //console.log('click');
       this.setState({imageUrl:this.state.input});
       fetch("https://api.clarifai.com/v2/models/face-detection/outputs",sendClarifaiRequestOptions(this.state.imageUrl))
-       .then(response => response.json())
-       .then(result => this.displayFaceBox(this.calculateFaceLocation(result)))
+      .then(response => response.json())
+       .then(result =>{
+        //console.log('hi',result)
+            if(result){
+                  fetch('http://localhost:3000/image',{
+                        method:'put',
+                        headers:{'Content-Type':'application/json'},
+                        body:JSON.stringify({
+                        id: this.state.user.id
+                   })
+                 })
+                 .then(response => response.json())
+                 .then(count =>{
+                  this.setState(Object.assign(this.state.user,{entries: count}))
+                 })
+            }
+        this.displayFaceBox(this.calculateFaceLocation(result))
+      })
        .catch(error => console.log('error', error));
      
      
@@ -151,7 +167,9 @@ class App extends React.Component{
         this.state.route === 'home' ? 
         <div>
         <Navigation onRouteChange={this.onRouteChange}/>
-        <Rank/>
+        <Rank 
+        name={this.state.user.name}
+        entries={this.state.user.entries}/>
         <ImageLinkForm onInputChange={this.onInputChange} onButtonDetect={this.onButtonDetect}/>
         <FaceRecogniton box={this.state.box} imageUrl={this.state.imageUrl}/>
      </div> :(
@@ -159,7 +177,7 @@ class App extends React.Component{
       <div>
       
       <h1 className='f1'>SmartBrain</h1>
-      <Signin onRouteChange={this.onRouteChange}/> </div> :
+      <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/> </div> :
        <div>
        
        <h1 className='f1'>SmartBrain</h1>
