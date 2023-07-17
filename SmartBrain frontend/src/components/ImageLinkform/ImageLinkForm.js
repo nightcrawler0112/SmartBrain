@@ -5,7 +5,7 @@ const ImageFinkForm=({onInputChange,onButtonDetect}) => {
    
     return(
         <div>
-            <p className='f3'>This SmartBrain detects the faces in your pictures<br></br>Paste the link below!!</p>
+            <p className='f3'>This SmartBrain detects the faces in your pictures<br></br>Paste the link below!!<br></br>Press the 'Detect' button twice.</p>
             <div className='center'>
                 <div className='searchbox center pa4 br3 shadow-5'>
                     {/* <label className="db fw6 lh-copy f6" for="name">Paste your link here!</label> */}

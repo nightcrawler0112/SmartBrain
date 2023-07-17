@@ -167,6 +167,7 @@ class App extends React.Component{
         this.state.route === 'home' ? 
         <div>
         <Navigation onRouteChange={this.onRouteChange}/>
+        {/* <Logo/> */}
         <Rank 
         name={this.state.user.name}
         entries={this.state.user.entries}/>

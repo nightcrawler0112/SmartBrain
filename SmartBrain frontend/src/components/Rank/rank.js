@@ -10,7 +10,7 @@ const Rank=({name,entries}) => {
 
             </div>
             <div className='white f1'>
-                {entries}
+                {Math.round(entries/2)}
             </div>
         </div>
     );
