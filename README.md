@@ -29,6 +29,6 @@ Start the servers:
 cd client
 npm run start
 
+
 cd server
 npm run start
-Open your browser and visit http://localhost:3000.
