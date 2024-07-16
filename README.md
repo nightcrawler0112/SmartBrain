@@ -2,9 +2,11 @@ SmartBrain
 SmartBrain is a web application for face detection. It uses the Clarifai API to identify faces in images provided via URLs. The application also tracks user entries and provides an entry count for each user.
 
 Features-:
-Face Detection: Uses Clarifai API to detect faces in images.
-User Tracking: Records and displays the number of entries per user.
-User Authentication and Authorization 
+1) Face Detection: Uses Clarifai API to detect faces in images.
+
+2) User Tracking: Records and displays the number of entries per user.
+
+3) User Authentication and Authorization 
 
 Installation
 
